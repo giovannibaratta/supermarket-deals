@@ -13,10 +13,11 @@ module "output" {
   depends_on = [aws_s3_bucket.tf_state]
 
   source  = "giovannibaratta/tf-output-write/aws"
-  version = "0.0.4"
+  version = "0.0.5"
 
   data = {
     primary_region = var.primary_region
+    tags = local.default_tags
   }
 
   destination = {
