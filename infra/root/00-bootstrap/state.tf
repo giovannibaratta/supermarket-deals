@@ -2,7 +2,6 @@ resource "random_id" "suffix" {
   byte_length = 8
 }
 
-
 resource "aws_s3_bucket" "tf_state" {
   bucket = "terraform-state-file-${random_id.suffix.hex}"
 }
