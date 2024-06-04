@@ -1,5 +1,5 @@
-variable "region" {
+variable "primary_region" {
   default = "us-east-1"
   type = string
-  description = "AWS Region"
+  description = "AWS primary region"
 }

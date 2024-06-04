@@ -16,7 +16,7 @@ module "output" {
   version = "0.0.4"
 
   data = {
-    primary_region = var.region
+    primary_region = var.primary_region
   }
 
   destination = {
