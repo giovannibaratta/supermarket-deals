@@ -19,3 +19,9 @@
 ```bash
 pip3 freeze > requirements.txt
 ```
+
+## Build container
+
+```bash
+docker build -t supermarket-deals .
+```
