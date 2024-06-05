@@ -88,7 +88,11 @@ function main() {
 # Function to check if a workspace exists
 function workspace_exists() {
   local workspace="$1"
-  terraform -chdir="${TERRAFORM_DIR}" workspace list | grep -q "^\s*${workspace}\s*$"
+  # Terraform workspace outputs a list of workspaces.
+  # The active workspace will include a * in the line+
+  # Other workspaces will include one or more leading whitespaces.
+  # The regex takes care of this
+  terraform -chdir="${TERRAFORM_DIR}" workspace list | grep -q "^\s*\*\s*${workspace}\s*$"
 }
 
 main "$@"
