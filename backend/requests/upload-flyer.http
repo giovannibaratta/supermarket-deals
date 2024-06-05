@@ -1,0 +1,8 @@
+POST http://localhost:8000/upload-flyer
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="my-supermarket-flyer.pdf"
+Content-Type: application/pdf
+
+< ./artifacts/my-supermarket-flyer.pdf
