@@ -89,10 +89,10 @@ function main() {
 function workspace_exists() {
   local workspace="$1"
   # Terraform workspace outputs a list of workspaces.
-  # The active workspace will include a * in the line+
+  # The active workspace will include a * in the line
   # Other workspaces will include one or more leading whitespaces.
   # The regex takes care of this
-  terraform -chdir="${TERRAFORM_DIR}" workspace list | grep -q "^\s*\*\s*${workspace}\s*$"
+  terraform -chdir="${TERRAFORM_DIR}" workspace list | grep -q -E "^\s*\*?\s*${workspace}\s*$"
 }
 
 main "$@"
